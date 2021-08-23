@@ -1,0 +1,198 @@
+body {
+  background: #dedede;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.clock {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 630px;
+  height: 630px;
+  border-radius: 50%;
+  background: #c3c3c3;
+}
+
+.hour-arrow {
+  position: absolute;
+  background: #444;
+  width: 7px;
+  height: 100px;
+  transform: translateY(-50%);
+  transform-origin: bottom center;
+  border-radius: 2px;
+}
+
+.minute-arrow {
+  position: absolute;
+  background: #484848;
+  width: 5px;
+  height: 210px;
+  transform: translateY(-50%);
+  transform-origin: bottom center;
+  border-radius: 1px;
+  opacity: 0.8;
+}
+
+.second-arrow {
+  position: absolute;
+  background: #111;
+  width: 2px;
+  height: 300px;
+  transform: translateY(-50%);
+  transform-origin: bottom center;
+  border-radius: 1px;
+}
+
+.labels {
+  position: absolute;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.labels div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+}
+
+.labels > div::after {
+  position: absolute;
+  content: '';
+  background: #000;
+  width: 6px;
+  height: 40px;
+  margin-top: -100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0);
+}
+
+.one-label {
+  transform: translate(0, -240px) rotate(30deg);
+  transform-origin: 0 240px 0;
+}
+
+.one-label div {
+  transform: rotate(-30deg);
+}
+
+.two-label {
+  transform: translate(0, -240px) rotate(60deg);
+  transform-origin: 0 240px 0;
+}
+
+.two-label div {
+  transform: rotate(-60deg);
+}
+
+.three-label {
+  transform: translate(0, -240px) rotate(90deg);
+  transform-origin: 0 240px 0;
+}
+
+.three-label div {
+  transform: rotate(-90deg);
+}
+
+.four-label {
+  transform: translate(0, -240px) rotate(120deg);
+  transform-origin: 0 240px 0;
+}
+
+.four-label div {
+  transform: rotate(-120deg);
+}
+
+.five-label {
+  transform: translate(0, -240px) rotate(150deg);
+  transform-origin: 0 240px 0;
+}
+
+.five-label div {
+  transform: rotate(-150deg);
+}
+
+.six-label {
+  transform: translate(0, -240px) rotate(180deg);
+  transform-origin: 0 240px 0;
+}
+
+.six-label div {
+  transform: rotate(-180deg);
+}
+
+.seven-label {
+  transform: translate(0, -240px) rotate(-150deg);
+  transform-origin: 0 240px 0;
+}
+
+.seven-label div {
+  transform: rotate(150deg);
+}
+
+.eight-label {
+  transform: translate(0, -240px) rotate(-120deg);
+  transform-origin: 0 240px 0;
+}
+
+.eight-label div {
+  transform: rotate(120deg);
+}
+
+.nine-label {
+  transform: translate(0, -240px) rotate(-90deg);
+  transform-origin: 0 240px 0;
+}
+
+.nine-label div {
+  transform: rotate(90deg);
+}
+
+.ten-label {
+  transform: translate(0, -240px) rotate(-60deg);
+  transform-origin: 0 240px 0;
+}
+
+.ten-label div {
+  transform: rotate(60deg);
+}
+
+.eleven-label {
+  transform: translate(0, -240px) rotate(-30deg);
+  transform-origin: 0 240px 0;
+}
+
+.eleven-label div {
+  transform: rotate(30deg);
+}
+
+.twelve-label {
+  transform: translate(0, -240px) rotate(0deg);
+  transform-origin: 0 240px 0;
+  text-align: center;
+}
+
+.twelve-label div {
+  transform: rotate(0deg);
+  text-align: center;
+}
+
+.marks {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
