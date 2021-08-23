@@ -15,6 +15,8 @@ const hourArrow = document.querySelector(".hour-arrow");
 const minuteArrow = document.querySelector(".minute-arrow");
 const secondArrow = document.querySelector(".second-arrow");
 
+secondArrow.addEventListener('mousedown', () => console.log('darova'))
+
 const step = () => {
   const date = new Date();
   const [secs, mins, hours] = [
@@ -22,14 +24,13 @@ const step = () => {
     date.getMinutes(),
     date.getHours(),
   ];
-  let secondAngle = secs * 6;
-  let minuteAngle = (mins * 6) + (secs / 10);
-  let hourAngle = (hours * 30) + (mins / 2) + (secs * 30 / 3600)
+  const secondAngle = secs * 6;
+  const minuteAngle = (mins * 6) + (secs / 10);
+  const hourAngle = (hours * 30) + (mins / 2) + (secs * 30 / 3600);
 
   secondArrow.style.transform = `translateY(-50%) rotate(${secondAngle}deg)`;
   minuteArrow.style.transform = `translateY(-50%) rotate(${minuteAngle}deg)`;
   hourArrow.style.transform = `translateY(-50%) rotate(${hourAngle}deg)`;
-  window.requestAnimationFrame(step);
 };
 
-window.requestAnimationFrame(step);
+step()
