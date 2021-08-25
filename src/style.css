@@ -1,5 +1,5 @@
 body {
-  background: #dedede;
+  background: #aeaeae;
 }
 
 .container {
@@ -9,6 +9,7 @@ body {
   width: 100%;
   margin: 0 auto;
   height: 100%;
+  user-select: none;
 }
 
 .clock {
@@ -19,38 +20,55 @@ body {
   width: 630px;
   height: 630px;
   border-radius: 50%;
-  background: #c3c3c3;
+  background: #555;
+  border: 4px solid #232323;
+}
+
+.middle-block {
+  position: absolute;
+  background: #000;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 }
 
 .hour-arrow {
   position: absolute;
-  background: #444;
+  background: #eee;
   width: 7px;
   height: 100px;
   transform: translateY(-50%);
   transform-origin: bottom center;
-  border-radius: 2px;
+  border-radius: 7px;
 }
 
 .minute-arrow {
   position: absolute;
-  background: #484848;
+  background: #eee;
   width: 5px;
   height: 210px;
   transform: translateY(-50%);
   transform-origin: bottom center;
-  border-radius: 1px;
-  opacity: 0.8;
+  border-radius: 7px;
 }
 
 .seconds-arrow {
   position: absolute;
-  background: #111;
+  background: #eee;
   width: 2px;
+  height: 210px;
+  transform-origin: bottom center;
+  border-radius: 7px;
+}
+
+.seconds-arrow-selectbox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 40px;
   height: 210px;
   transform: translateY(-50%);
   transform-origin: bottom center;
-  border-radius: 1px;
 }
 
 .labels {
@@ -65,12 +83,13 @@ body {
   align-items: center;
   justify-content: center;
   position: absolute;
+  color: #eee;
 }
 
 .labels > div::after {
   position: absolute;
   content: '';
-  background: #000;
+  background: #eee;
   width: 6px;
   height: 40px;
   margin-top: -100px;
@@ -78,116 +97,6 @@ body {
   justify-content: center;
   align-items: center;
   transform: translateX(0);
-}
-
-.one-label {
-  transform: translate(0, -240px) rotate(30deg);
-  transform-origin: 0 240px 0;
-}
-
-.one-label div {
-  transform: rotate(-30deg);
-}
-
-.two-label {
-  transform: translate(0, -240px) rotate(60deg);
-  transform-origin: 0 240px 0;
-}
-
-.two-label div {
-  transform: rotate(-60deg);
-}
-
-.three-label {
-  transform: translate(0, -240px) rotate(90deg);
-  transform-origin: 0 240px 0;
-}
-
-.three-label div {
-  transform: rotate(-90deg);
-}
-
-.four-label {
-  transform: translate(0, -240px) rotate(120deg);
-  transform-origin: 0 240px 0;
-}
-
-.four-label div {
-  transform: rotate(-120deg);
-}
-
-.five-label {
-  transform: translate(0, -240px) rotate(150deg);
-  transform-origin: 0 240px 0;
-}
-
-.five-label div {
-  transform: rotate(-150deg);
-}
-
-.six-label {
-  transform: translate(0, -240px) rotate(180deg);
-  transform-origin: 0 240px 0;
-}
-
-.six-label div {
-  transform: rotate(-180deg);
-}
-
-.seven-label {
-  transform: translate(0, -240px) rotate(-150deg);
-  transform-origin: 0 240px 0;
-}
-
-.seven-label div {
-  transform: rotate(150deg);
-}
-
-.eight-label {
-  transform: translate(0, -240px) rotate(-120deg);
-  transform-origin: 0 240px 0;
-}
-
-.eight-label div {
-  transform: rotate(120deg);
-}
-
-.nine-label {
-  transform: translate(0, -240px) rotate(-90deg);
-  transform-origin: 0 240px 0;
-}
-
-.nine-label div {
-  transform: rotate(90deg);
-}
-
-.ten-label {
-  transform: translate(0, -240px) rotate(-60deg);
-  transform-origin: 0 240px 0;
-}
-
-.ten-label div {
-  transform: rotate(60deg);
-}
-
-.eleven-label {
-  transform: translate(0, -240px) rotate(-30deg);
-  transform-origin: 0 240px 0;
-}
-
-.eleven-label div {
-  transform: rotate(30deg);
-}
-
-.twelve-label {
-  transform: translate(0, -240px) rotate(0deg);
-  transform-origin: 0 240px 0;
-  text-align: center;
-}
-
-.twelve-label div {
-  transform: rotate(0deg);
-  text-align: center;
 }
 
 .marks {

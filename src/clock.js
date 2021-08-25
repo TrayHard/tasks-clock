@@ -1,5 +1,5 @@
 function deg2rad(deg) {
-  return deg * (Math.PI/180);
+  return deg * (Math.PI / 180);
 }
 
 class Arrow {
@@ -15,15 +15,17 @@ class Arrow {
     this.update();
     element.addEventListener("mousedown", () => {
       this.isUpdating = false;
+      document.body.style.cursor = "grab";
       window.onmousemove = (cursor) => {
         const pointerX = cursor.pageX;
         const pointerY = cursor.pageY;
         const vectorNormalX = this.#CLOCK.centerX - pointerX;
         const vectorNormalY = this.#CLOCK.centerY - pointerY;
         const arct = Math.atan(vectorNormalY / vectorNormalX);
-        this.angle = (vectorNormalX >= 0 ? arct : arct + Math.PI) - (Math.PI / 2);
+        this.angle = (vectorNormalX >= 0 ? arct : arct + Math.PI) - Math.PI / 2;
       };
       window.addEventListener("mouseup", () => {
+        document.body.style.cursor = "default";
         window.onmousemove = null;
         this.isUpdating = true;
       });
@@ -31,11 +33,11 @@ class Arrow {
   }
 
   get isUpdating() {
-    return this.#IS_UPDATING
+    return this.#IS_UPDATING;
   }
 
   set isUpdating(value) {
-    this.#IS_UPDATING = value
+    this.#IS_UPDATING = value;
     if (value) this.update();
   }
 
@@ -103,21 +105,31 @@ class HourArrow extends Arrow {
 }
 
 class Clock {
-  #ELEMENT = null
+  #ELEMENT = null;
   constructor(element) {
-    this.#ELEMENT = element
+    this.#ELEMENT = element;
   }
 
   get centerX() {
-    return this.#ELEMENT.getBoundingClientRect().x + this.#ELEMENT.offsetWidth / 2;
+    return (
+      this.#ELEMENT.getBoundingClientRect().x + this.#ELEMENT.offsetWidth / 2
+    );
   }
 
   get centerY() {
-    return this.#ELEMENT.getBoundingClientRect().y + this.#ELEMENT.offsetHeight / 2;
+    return (
+      this.#ELEMENT.getBoundingClientRect().y + this.#ELEMENT.offsetHeight / 2
+    );
   }
 }
 
 const clock = new Clock(document.querySelector(".clock"));
 const hourArrow = new HourArrow(clock, document.querySelector(".hour-arrow"));
-const minuteArrow = new MinuteArrow(clock, document.querySelector(".minute-arrow"));
-const secondsArrow = new SecondsArrow(clock, document.querySelector(".seconds-arrow"));
+const minuteArrow = new MinuteArrow(
+  clock,
+  document.querySelector(".minute-arrow")
+);
+const secondsArrow = new SecondsArrow(
+  clock,
+  document.querySelector(".seconds-arrow-selectbox")
+);
