@@ -127,9 +127,9 @@ const clock = new Clock(document.querySelector(".clock"));
 const hourArrow = new HourArrow(clock, document.querySelector(".hour-arrow"));
 const minuteArrow = new MinuteArrow(
   clock,
-  document.querySelector(".minute-arrow")
+  document.querySelector(".minute-arrow"),
 );
 const secondsArrow = new SecondsArrow(
   clock,
-  document.querySelector(".seconds-arrow-selectbox")
+  document.querySelector(".seconds-arrow-selectbox"),
 );
